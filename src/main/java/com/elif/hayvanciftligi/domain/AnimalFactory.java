@@ -3,6 +3,7 @@ package com.elif.hayvanciftligi.domain;
 import java.time.Instant;
 import java.util.UUID;
 
+/** Hayvan türüne uygun nesne örneğini üretir. */
 public final class AnimalFactory {
 
     private AnimalFactory() {

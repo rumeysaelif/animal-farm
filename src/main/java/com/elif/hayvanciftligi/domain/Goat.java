@@ -3,6 +3,7 @@ package com.elif.hayvanciftligi.domain;
 import java.time.Instant;
 import java.util.UUID;
 
+/** Keçi türündeki hayvanları temsil eder. */
 public final class Goat extends Animal {
 
     public Goat(UUID id, String name, Gender gender, Instant createdAt) {

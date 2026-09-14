@@ -2,6 +2,7 @@ package com.elif.hayvanciftligi.domain;
 
 import java.util.Locale;
 
+/** Desteklenen sabit hayvan türlerini ve kapasitelerini tutar. */
 public enum AnimalType {
     GOAT("Keçi", 6),
     SHEEP("Koyun", 6),

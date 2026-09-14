@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
+/** Hayvan yönetimi ve kapasite kontrollerine ait iş kurallarını yürütür. */
 @Service
 public class AnimalService {
 

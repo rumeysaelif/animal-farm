@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.Instant;
 import java.util.List;
 
+/** Uygulama hatalarını standart HTTP cevaplarına dönüştürür. */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

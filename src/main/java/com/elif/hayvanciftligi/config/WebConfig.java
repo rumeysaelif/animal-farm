@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/** REST API için web ve CORS ayarlarını yapılandırır. */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 

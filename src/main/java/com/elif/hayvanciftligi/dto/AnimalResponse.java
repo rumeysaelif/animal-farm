@@ -6,6 +6,7 @@ import com.elif.hayvanciftligi.domain.Gender;
 import java.time.Instant;
 import java.util.UUID;
 
+/** API üzerinden döndürülen hayvan bilgilerini taşır. */
 public record AnimalResponse(
         UUID id,
         AnimalType type,

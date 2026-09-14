@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
 
+/** Tüm hayvan türlerinin ortak özelliklerini tanımlar. */
 public abstract class Animal {
 
     private final UUID id;

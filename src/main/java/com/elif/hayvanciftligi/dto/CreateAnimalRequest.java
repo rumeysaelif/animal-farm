@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+/** Yeni hayvan ekleme isteğinde alınan alanları taşır. */
 public record CreateAnimalRequest(
         @NotNull(message = "Hayvan türü zorunludur.") AnimalType type,
         @NotBlank(message = "Hayvan adı boş bırakılamaz.")

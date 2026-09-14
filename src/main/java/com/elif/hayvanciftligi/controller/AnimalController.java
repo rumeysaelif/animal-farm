@@ -24,6 +24,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 
+/** Hayvan yönetim işlemlerini REST API olarak dışarı açar. */
 @RestController
 @RequestMapping("/api")
 @Tag(name = "Hayvanlar", description = "Çiftlikteki hayvanları yönetmek için uç noktalar")

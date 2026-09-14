@@ -11,6 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
+/** Hayvanları uygulama çalıştığı sürece bellekte saklar. */
 @Repository
 public class InMemoryAnimalRepository implements AnimalRepository {
 

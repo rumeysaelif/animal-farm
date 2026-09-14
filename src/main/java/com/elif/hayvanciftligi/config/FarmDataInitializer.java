@@ -7,6 +7,7 @@ import com.elif.hayvanciftligi.service.AnimalService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+/** Uygulama açılırken örnek hayvan verilerini belleğe ekler. */
 @Component
 public class FarmDataInitializer implements CommandLineRunner {
 

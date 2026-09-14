@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+/** Hayvan verileri için gerekli saklama işlemlerini tanımlar. */
 public interface AnimalRepository {
 
     Animal save(Animal animal);

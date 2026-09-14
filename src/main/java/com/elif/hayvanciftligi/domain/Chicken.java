@@ -3,6 +3,7 @@ package com.elif.hayvanciftligi.domain;
 import java.time.Instant;
 import java.util.UUID;
 
+/** Tavuk türündeki hayvanları temsil eder. */
 public final class Chicken extends Animal {
 
     public Chicken(UUID id, String name, Gender gender, Instant createdAt) {
