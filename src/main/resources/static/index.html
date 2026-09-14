@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#78b83e">
+    <meta name="description" content="Güneşli Vadi hayvan çiftliği yönetim oyunu">
+    <title>Güneşli Vadi Çiftliği</title>
+    <link rel="stylesheet" href="/styles.css?v=13">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🌻</span>
+        <div>
+            <p class="eyebrow">Rümeysa'nın çiftliği</p>
+            <h1>Güneşli Vadi</h1>
+        </div>
+    </div>
+    <div class="farm-status" aria-label="Çiftlik durumu">
+        <div class="status-pill"><span aria-hidden="true">☀️</span><span>Güneşli</span></div>
+        <div class="status-pill status-pill--strong">
+            <span aria-hidden="true">🐾</span><strong id="total-animal-count">0</strong><span>hayvan</span>
+        </div>
+    </div>
+</header>
+
+<main class="simulation-shell">
+    <section class="map-card" aria-labelledby="farm-map-title">
+        <div class="map-heading">
+            <div>
+                <p class="eyebrow eyebrow--dark">Canlı çiftlik haritası</p>
+                <h2 id="farm-map-title">Hayvan yaşam alanları</h2>
+            </div>
+            <button class="primary-button" id="open-create-dialog" type="button">
+                <span aria-hidden="true">＋</span> Hayvan ekle
+            </button>
+        </div>
+
+        <div class="farm-viewport" aria-label="Döndürülebilir ve yakınlaştırılabilir üç boyutlu çiftlik">
+            <div class="farm-stage" id="farm-stage">
+                <canvas class="farm-canvas" id="farm-canvas" aria-label="Üç boyutlu voxel çiftlik haritası"></canvas>
+                <div class="farm-vignette" aria-hidden="true"></div>
+
+                <div class="animal-layer" id="animal-layer" aria-live="polite"></div>
+                <div class="map-loading" id="map-loading"><span class="spinner"></span> Çiftlik uyanıyor…</div>
+            </div>
+        </div>
+
+        <div class="map-footer">
+            <p><span aria-hidden="true">🖱️</span> Bilgilerini görmek için hayvanın üzerine gel; düzenlemek için tıkla.</p>
+            <p><span aria-hidden="true">🧊</span> Hayvanlar voxel dünyada kendi alanlarında dolaşır.</p>
+        </div>
+    </section>
+</main>
+
+<dialog class="animal-dialog" id="animal-dialog">
+    <form id="animal-form">
+        <div class="dialog-header">
+            <div>
+                <p class="eyebrow eyebrow--dark" id="dialog-eyebrow">Yeni çiftlik sakini</p>
+                <h2 id="dialog-title">Hayvan ekle</h2>
+            </div>
+            <button class="icon-button" id="close-dialog" type="button" aria-label="Pencereyi kapat">×</button>
+        </div>
+
+        <div class="form-grid">
+            <label class="field field--wide">
+                <span>Adı</span>
+                <input id="animal-name" name="name" type="text" maxlength="60" placeholder="Örn. Boncuk" required>
+            </label>
+
+            <label class="field" id="type-field">
+                <span>Türü</span>
+                <select id="animal-type" name="type" required>
+                    <option value="GOAT">🐐 Keçi</option>
+                    <option value="SHEEP">🐑 Koyun</option>
+                    <option value="CHICKEN">🐔 Tavuk</option>
+                </select>
+            </label>
+
+            <label class="field">
+                <span>Cinsiyeti</span>
+                <select id="animal-gender" name="gender" required>
+                    <option value="FEMALE">Dişi</option>
+                    <option value="MALE">Erkek</option>
+                </select>
+            </label>
+
+        </div>
+
+        <p class="form-error" id="form-error" role="alert"></p>
+
+        <div class="dialog-actions">
+            <button class="secondary-button" id="cancel-dialog" type="button">Vazgeç</button>
+            <button class="primary-button" id="save-animal" type="submit">Hayvanı kaydet</button>
+        </div>
+    </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/bootstrap.js?v=13"></script>
+</body>
+</html>
