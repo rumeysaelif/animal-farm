@@ -5,7 +5,7 @@ Spring Boot REST API ve Three.js kullanılarak geliştirilmiş bir çiftlik yön
 [![Canlı Demo](https://img.shields.io/badge/Canlı_Demo-Aç-2ea44f?style=for-the-badge)](https://animal-farm-3fio.onrender.com/)
 [![Swagger UI](https://img.shields.io/badge/Swagger_UI-API'yi_Test_Et-85ea2d?style=for-the-badge&logo=swagger&logoColor=black)](https://animal-farm-3fio.onrender.com/swagger-ui.html)
 
-![Hayvan Çiftliği](src/main/resources/static/assets/sunny-valley-farm.png)
+![Hayvan Çiftliği genel görünümü](docs/images/farm-overview.png)
 
 > Ücretsiz sunucu kullanılmadığında uykuya geçebilir; canlı demonun ilk açılışı yaklaşık bir dakika sürebilir.
 
@@ -19,6 +19,14 @@ Spring Boot REST API ve Three.js kullanılarak geliştirilmiş bir çiftlik yön
 - Doğrulama ve merkezi hata yönetimi
 - Swagger UI üzerinden REST API dokümantasyonu ve testi
 - Three.js tabanlı üç boyutlu çiftlik arayüzü
+
+## Ekran görüntüleri
+
+| Hayvan yaşam alanları | Tarla ve çiftçi |
+|---|---|
+| ![Hayvan yaşam alanları](docs/images/animal-areas.png) | ![Tarla ve çiftçi](docs/images/farm-field.png) |
+
+![Tavuk yaşam alanı](docs/images/chicken-area.png)
 
 ## Proje yapısı
 
