@@ -1,34 +1,55 @@
 # Hayvan Çiftliği
 
+Spring Boot REST API ve Three.js kullanılarak geliştirilmiş bir çiftlik yönetim uygulaması. Keçi, koyun ve tavuklar uygulama belleğinde birer nesne olarak tutulur ve web arayüzündeki üç boyutlu yaşam alanlarında görüntülenir.
+
 [![Canlı Demo](https://img.shields.io/badge/Canlı_Demo-Aç-2ea44f?style=for-the-badge)](https://animal-farm-3fio.onrender.com/)
 [![Swagger UI](https://img.shields.io/badge/Swagger_UI-API'yi_Test_Et-85ea2d?style=for-the-badge&logo=swagger&logoColor=black)](https://animal-farm-3fio.onrender.com/swagger-ui.html)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rumeysaelif/animal-farm)
 
-Spring Boot ile geliştirilmiş, çiftlikteki keçi, koyun ve tavukların yönetildiği bir REST API uygulamasıdır. Hayvanlar uygulama belleğinde birer nesne olarak tutulur; uygulama yeniden başlatıldığında veriler sıfırlanır.
+![Hayvan Çiftliği](src/main/resources/static/assets/sunny-valley-farm.png)
 
-## Projenin çalışma mantığı
+> Ücretsiz sunucu kullanılmadığında uykuya geçebilir; canlı demonun ilk açılışı yaklaşık bir dakika sürebilir.
 
-- `Animal` soyut sınıfı hayvanların ortak özelliklerini taşır; `Goat`, `Sheep` ve `Chicken` sınıfları bu sınıftan türetilmiştir.
-- `AnimalFactory`, seçilen türe uygun hayvan nesnesini oluşturur.
-- `InMemoryAnimalRepository`, hayvanları uygulama belleğinde saklar.
-- `AnimalService`, ekleme, listeleme, güncelleme, silme ve kapasite kontrollerini yürütür.
-- `AnimalController`, bu işlemleri REST API üzerinden dışarı açar.
-- Hatalı istekler ve bulunamayan hayvanlar merkezi hata yönetimiyle uygun HTTP cevaplarına dönüştürülür.
+## Özellikler
 
-Uygulamada hayvan türleri sabittir: `GOAT`, `SHEEP` ve `CHICKEN`. API üzerinden türler ve sayıları listelenebilir; bir türe ait hayvanlar görüntülenebilir ve hayvan ekleme, güncelleme, silme işlemleri yapılabilir.
+- Keçi, koyun ve tavuk türlerini ve hayvan sayılarını listeleme
+- Bir türe ait hayvanları görüntüleme
+- Hayvan ekleme, güncelleme ve silme
+- Türe göre kapasite kontrolü
+- Bellek içi veri saklama
+- Doğrulama ve merkezi hata yönetimi
+- Swagger UI üzerinden REST API dokümantasyonu ve testi
+- Three.js tabanlı üç boyutlu çiftlik arayüzü
+
+## Proje yapısı
+
+- [`domain`](src/main/java/com/elif/hayvanciftligi/domain): Hayvan sınıfları, türler ve nesne üretimi
+- [`repository`](src/main/java/com/elif/hayvanciftligi/repository): Bellek içi veri saklama işlemleri
+- [`service`](src/main/java/com/elif/hayvanciftligi/service): İş kuralları ve kapasite kontrolleri
+- [`controller`](src/main/java/com/elif/hayvanciftligi/controller): REST API uç noktaları
+- [`dto`](src/main/java/com/elif/hayvanciftligi/dto): API istek ve cevap modelleri
+- [`exception`](src/main/java/com/elif/hayvanciftligi/exception): Merkezi hata yönetimi
+- [`config`](src/main/java/com/elif/hayvanciftligi/config): Swagger, web ve başlangıç verisi ayarları
+- [`static`](src/main/resources/static): Web arayüzü ve üç boyutlu varlıklar
+- [`test`](src/test/java/com/elif/hayvanciftligi): Birim ve entegrasyon testleri
 
 ## Kullanılan teknolojiler
 
 - Java 17
-- Spring Boot
-- Spring Web MVC ve Bean Validation
+- Spring Boot ve Spring Web MVC
+- Bean Validation
 - Springdoc OpenAPI / Swagger UI
 - JUnit ve Spring Boot Test
-- Three.js tabanlı web arayüzü
+- Three.js
+- Maven
 
-## Çalıştırma
+## Yerel çalıştırma
 
-Gereksinim: JDK 17 veya sonrası.
+JDK 17 veya daha yeni bir sürüm gereklidir.
+
+```bash
+git clone https://github.com/rumeysaelif/animal-farm.git
+cd animal-farm
+```
 
 Windows:
 
@@ -52,14 +73,15 @@ Uygulama başladıktan sonra:
 
 | Metot | Adres | Açıklama |
 |---|---|---|
-| `GET` | `/api/animal-types` | Hayvan türlerini ve tür başına hayvan sayısını getirir |
+| `GET` | `/api/animal-types` | Türleri ve tür başına hayvan sayısını getirir |
 | `GET` | `/api/animal-types/{type}/animals` | Belirtilen türe ait hayvanları getirir |
+| `GET` | `/api/animals` | Bütün hayvanları getirir |
 | `GET` | `/api/animals/{id}` | ID ile bir hayvanı getirir |
 | `POST` | `/api/animals` | Yeni hayvan ekler |
-| `PUT` | `/api/animals/{id}` | Bir hayvanın bilgilerini günceller |
-| `DELETE` | `/api/animals/{id}` | Bir hayvanı siler |
+| `PUT` | `/api/animals/{id}` | Hayvan bilgilerini günceller |
+| `DELETE` | `/api/animals/{id}` | Hayvanı siler |
 
-Örnek hayvan ekleme isteği:
+Örnek istek:
 
 ```json
 {
@@ -76,7 +98,3 @@ Uygulama başladıktan sonra:
 ```
 
 Üçüncü taraf görsel ve kod varlıklarının bilgileri [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) dosyasında yer alır.
-
-## İnternette yayınlama
-
-Yukarıdaki **Deploy to Render** butonu, projeyi bir Render hesabına web servisi olarak kurar. Ücretsiz servis kullanılmadığında uykuya geçebilir; bu nedenle ilk açılış yaklaşık bir dakika sürebilir. Servis yeniden başladığında bellekteki hayvan verileri başlangıç durumuna döner.
