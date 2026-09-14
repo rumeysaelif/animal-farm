@@ -2,8 +2,8 @@
 
 Spring Boot REST API ve Three.js kullanılarak geliştirilmiş bir çiftlik yönetim uygulaması. Keçi, koyun ve tavuklar uygulama belleğinde birer nesne olarak tutulur ve web arayüzündeki üç boyutlu yaşam alanlarında görüntülenir.
 
-[![Canlı Demo](https://img.shields.io/badge/Canlı_Demo-Aç-2ea44f?style=for-the-badge)](https://animal-farm-3fio.onrender.com/)
-[![Swagger UI](https://img.shields.io/badge/Swagger_UI-API'yi_Test_Et-85ea2d?style=for-the-badge&logo=swagger&logoColor=black)](https://animal-farm-3fio.onrender.com/swagger-ui.html)
+[![Canlı Demo](https://img.shields.io/badge/Canlı_Demo-ff69b4?style=for-the-badge)](https://animal-farm-3fio.onrender.com/)
+[![Swagger UI](https://img.shields.io/badge/Swagger_UI-6f42c1?style=for-the-badge&logo=swagger&logoColor=white)](https://animal-farm-3fio.onrender.com/swagger-ui.html)
 
 ![Hayvan Çiftliği genel görünümü](docs/images/farm-overview.png)
 
