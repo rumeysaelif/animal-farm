@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: animal-farm
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/animal-types

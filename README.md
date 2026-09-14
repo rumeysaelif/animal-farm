@@ -1,5 +1,7 @@
 # Hayvan Çiftliği
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rumeysaelif/animal-farm)
+
 Spring Boot ile geliştirilmiş, çiftlikteki keçi, koyun ve tavukların yönetildiği bir REST API uygulamasıdır. Hayvanlar uygulama belleğinde birer nesne olarak tutulur; uygulama yeniden başlatıldığında veriler sıfırlanır.
 
 ## Projenin çalışma mantığı
@@ -72,3 +74,7 @@ Uygulama başladıktan sonra:
 ```
 
 Üçüncü taraf görsel ve kod varlıklarının bilgileri [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) dosyasında yer alır.
+
+## İnternette yayınlama
+
+Yukarıdaki **Deploy to Render** butonu, projeyi bir Render hesabına web servisi olarak kurar. Ücretsiz servis kullanılmadığında uykuya geçebilir; bu nedenle ilk açılış yaklaşık bir dakika sürebilir. Servis yeniden başladığında bellekteki hayvan verileri başlangıç durumuna döner.
