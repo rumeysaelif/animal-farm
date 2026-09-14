@@ -1,5 +1,7 @@
 # Hayvan Çiftliği
 
+[![Canlı Demo](https://img.shields.io/badge/Canlı_Demo-Aç-2ea44f?style=for-the-badge)](https://animal-farm-3fio.onrender.com/)
+[![Swagger UI](https://img.shields.io/badge/Swagger_UI-API'yi_Test_Et-85ea2d?style=for-the-badge&logo=swagger&logoColor=black)](https://animal-farm-3fio.onrender.com/swagger-ui.html)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rumeysaelif/animal-farm)
 
 Spring Boot ile geliştirilmiş, çiftlikteki keçi, koyun ve tavukların yönetildiği bir REST API uygulamasıdır. Hayvanlar uygulama belleğinde birer nesne olarak tutulur; uygulama yeniden başlatıldığında veriler sıfırlanır.
